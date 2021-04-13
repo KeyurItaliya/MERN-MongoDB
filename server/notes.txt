@@ -1,0 +1,82 @@
+#10 send mail 
+
+npm install nodemailer package
+allow less secure app https://myaccount.google.com/lesssecureapps
+
+write program 
+check mail
+
+#36 - login and register jwt authentication Part-2
+
+Make Post rourte for register new user
+install body-parser - requst data parser use => json to oject convert
+install crypto
+encrypt password
+save data
+check with postman
+check in database
+
+JSON.stringify() -> Object To String.
+
+JSON.parse() -> String To Object.
+
+isFinite()
+
+Dialog -> login modal
+Drawer ->
+Menu -> navbar profile open
+Popover -> smal button near
+
+#37 generate jwt part-2
+
+Install jsonwebtoken
+Apply with register
+save data
+check with postman
+check in database
+
+#38 Login and Register jwt authentication Part-4
+
+make router for login
+Decrypt password
+check with postman
+check jwt token
+
+#39 Login and Register jwt authentication Part-5
+
+Make A api for get Users
+Make Middleware for jwt aut
+check Jwt token with MiddleWare
+Apply Middleware to Api
+Test example
+
+profile for good resources
+https://medium.com/@saannjaay
+
+#axios
+Request method aliases
+
+axios.request(config)
+axios.get(url[, config])
+axios.delete(url[, config])
+axios.head(url[, config])
+axios.options(url[, config])
+axios.post(url[, data[, config]])
+axios.put(url[, data[, config]])
+axios.patch(url[, data[, config]])
+Concurrency
+
+axios.all(iterable)
+axios.spread(callback)
+Instance methods
+
+axios#create([config])
+axios#request(config)
+axios#get(url[, config])
+axios#delete(url[, config])
+axios#head(url[, config])
+axios#options(url[, config])
+axios#post(url[, data[, config]])
+axios#put(url[, data[, config]])
+axios#patch(url[, data[, config]])
+
