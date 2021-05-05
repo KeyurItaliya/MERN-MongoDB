@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     },
     content: {
       flexGrow: 1,
-      padding: theme.spacing(3)
+      padding: theme.spacing(1)
     },
     toolbar: theme.mixins.toolbar,
   })
@@ -49,8 +49,6 @@ function App() {
   return (
         <React.Fragment>
           <Router history={history.createBrowserHistory()}>
-            <div className={classes.root}>
-                <DeshAppBar />
                 <main className={classes.content}>
                   <div className={classes.toolbar} />
                     <Suspense fallback={<MainScreenLoader />}>
@@ -72,28 +70,35 @@ function App() {
                       </Switch>
                     </Suspense>
                 </main>
-            </div>
           </Router>
         </React.Fragment>
   );
 }
 
 const ComponentWithNavbar = () => {
+  const classes = useStyles();
   return (
   <React.Fragment>
     <Suspense fallback={<MainScreenLoader />}>
-      <Switch>
-        {AuthRoutes.map((RouteObj,index)=>(
-          <ProtectedRout
-              key={index}
-              path={RouteObj.path}
-              exact
-              // exact={(exact !== undefined && exact === true)? true : false}
-              // component={lazy(()=> import(RouteObj.component))}
-              component={RouteObj.component}
-          />
-        ))}
-      </Switch>
+      <div className={classes.root}>
+        <DeshAppBar />
+        <main className={classes.content}>
+          <div className={classes.toolbar} >
+            <Switch>
+              {AuthRoutes.map((RouteObj,index)=>(
+                <ProtectedRout
+                    key={index}
+                    path={RouteObj.path}
+                    exact
+                    // exact={(exact !== undefined && exact === true)? true : false}
+                    // component={lazy(()=> import(RouteObj.component))}
+                    component={RouteObj.component}
+                />
+              ))}
+            </Switch>
+          </div>
+        </main>
+      </div>
     </Suspense>
   </React.Fragment>
   )

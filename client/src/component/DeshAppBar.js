@@ -33,13 +33,13 @@ import ReportIcon from '@material-ui/icons/Report';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import HomeIcon from '@material-ui/icons/Home';
-
+import WorkIcon from '@material-ui/icons/Work';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 
-import MainDesh from './MainDesh';
+import MainDesh from './Register';
 import configAppConst from './appConfigurations'
 import Avatar from '@material-ui/core/Avatar';
 import { deepOrange, deepPurple } from '@material-ui/core/colors';
@@ -117,8 +117,14 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
-    title: 'Employees',
-    path: '/notifications',
+    title: 'Job Seeker',
+    path: '/jobseeker',
+    icon: <WorkIcon />,
+    cName: 'nav-text'
+  },
+  {
+    title: 'Register',
+    path: '/registeruser',
     icon: <PeopleAltIcon />,
     cName: 'nav-text'
   },

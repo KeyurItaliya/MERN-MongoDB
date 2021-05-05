@@ -17,10 +17,10 @@ var data = {
 function Reports() {
     return (
         <div>
+            <Card />
             <Line data={data} />
             <Bar data={data} />
             <Pie data={data} />
-            <Card />
         </div>
     )
 }

@@ -2,19 +2,18 @@ import React,{ lazy } from 'react';
 import axios from 'axios';
 
 ////// protect routes
-const MainDeshReport = lazy(()=> import('../component/Reports'))
-const ReportDashboardApp = lazy(()=> import('../component/Listitem'))
+const Home = lazy(()=> import('../component/Home'))
+const ReportDashboardApp = lazy(()=> import('../component/JobSeekers'))
 const Pagination = lazy(()=> import('../component/Pagination'))
-const NotificationApp = lazy(()=> import('../component/MainDesh'))
-const MailApp = lazy(()=> import('../component/MainDesh'))
-const ViewCampaign = lazy(()=> import('../component/MainDesh'))
+const RegisterUser = lazy(()=> import('../component/Register'))
+const MailApp = lazy(()=> import('../component/Register'))
+const ViewCampaign = lazy(()=> import('../component/Register'))
 const SettingApp = lazy(()=> import('../component/NiravCode'))
-const ImportCustomerData = lazy(()=> import('../component/MainDesh'))
+const ImportCustomerData = lazy(()=> import('../component/Register'))
 const ReportData = lazy(()=> import('../component/Reports'))
 
 const Login = lazy(()=> import('../component/Login'))
 const Register = lazy(()=> import('../component/Register'))
-
 export const serverBaseURL = 'http://localhost:8000/';
 axios.defaults.baseURL = serverBaseURL;
 
@@ -22,10 +21,10 @@ export const AuthRoutes = [
 	{
 		path:'/',
 		exact : true,
-		component:MainDeshReport
+		component:Home
 	},
 	{
-		path:'/dashboard',
+		path:'/jobseeker',
 		exact : true,
 		component:ReportDashboardApp
 	},
@@ -35,9 +34,9 @@ export const AuthRoutes = [
 		component : Pagination
 	},
 	{
-		path:'/notifications',
+		path:'/registeruser',
 		exact : true,
-		component:NotificationApp
+		component:RegisterUser
 	},
 	{
 		path:'/reports',

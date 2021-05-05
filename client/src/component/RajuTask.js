@@ -4,6 +4,7 @@ import { makeStyles, fade } from '@material-ui/core/styles';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import SearchIcon from '@material-ui/icons/Search';
 
+
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -64,6 +65,7 @@ function RajuTask() {
 
   return (
     <div className={classes.root}>
+      <Cart classes = {classes}/>
       <TableContainer className={classes.tableContat} component={Paper}>
         <Grid container>
           <Grid item sm={0}>

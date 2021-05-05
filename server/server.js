@@ -104,6 +104,18 @@ app.get('/income/:pan', (req, res) => {
     res.json({income : 400000})
 })
 
+app.get('/search/:name', (req, res) => {
+    try{
+        var regex = new RegExp(req.params.name, 'i');
+        User.find({username: regex}).then((result) => {
+            res.status(200).json(result)
+        })
+    }catch(e) {
+        res.status(400).send(e.message)
+    }
+    
+})
+
 app.use("/", router);
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
