@@ -2,8 +2,16 @@
 # https://keyur-app.herokuapp.com/
 # dependencies
 node_modules
-/backend/node_modules
-/frontend/node_modules
+/server/node_modules
+/client/node_modules
+
+/server/.env
+/server/package-lock.json
+/server/notes.txt
+/client/package-lock.json
+/client/README.md
+/client/build
+
 /.pnp
 .pnp.js
 
