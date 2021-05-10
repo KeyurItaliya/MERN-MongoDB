@@ -23,7 +23,7 @@ export const userRegister = (datas) => (dispatch) => {
         }
         axios({
             method: 'post',
-            url: '/register',
+            url: '/api/user/register',
             headers: config, 
             data: datas
           }).then((res) => {
@@ -55,7 +55,7 @@ export function setOpenDeleteConfirmDialog(data) {
 export const userDelete = (datas) => (dispatch) => {
   console.log("delet id response ::", datas)
   return new Promise((resolve, reject) => {
-      const url = `http://localhost:8000/deleteUser/${datas}`;
+      const url = `http://localhost:8000//api/user/deleteUser/${datas}`;
       const config = {
           headers: { 'content-type':  'application/json' }
       }

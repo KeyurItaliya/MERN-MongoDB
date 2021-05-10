@@ -58,7 +58,7 @@ export const loginUsers = (passData) => (dispatch) =>{
     return new Promise((resolve, reject) => {
         const request = axios({
             method: 'post',
-            url: '/login',
+            url: '/api/user/login',
             data: passData
         })
         request.then((response) => {
