@@ -13,3 +13,12 @@ swagger ref
  *                 items: 
  *                   type: object
  *                   numbers: number
+
+
+ *               photo:
+ *                 type: array
+ *                 items: 
+ *                   type: object
+ *                   properties:
+ *                     number: 
+ *                       type: number
