@@ -5,3 +5,11 @@
 
 swagger ref
 -> https://blog.logrocket.com/documenting-your-express-api-with-swagger/
+
+
+
+ *               photo:
+ *                 type: array
+ *                 items: 
+ *                   type: object
+ *                   numbers: number
