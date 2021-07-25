@@ -16,9 +16,9 @@ const UnProtectedRoute = ({isUserAuthenticated, component: Component, ...rest}) 
           return (
             <Redirect
               to={{
-                pathname: "/",
+                pathname: props.location.state.from.pathname,
                 state: {
-                  from: props.location
+                  from: props.location.state.from.pathname
                 }
               }}
             />

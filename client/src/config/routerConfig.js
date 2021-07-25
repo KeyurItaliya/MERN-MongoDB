@@ -10,6 +10,7 @@ const MailApp = lazy(()=> import('../component/Register'))
 const ViewCampaign = lazy(()=> import('../component/Register'))
 const SettingApp = lazy(()=> import('../component/NiravCode'))
 const ImportCustomerData = lazy(()=> import('../component/Register'))
+const Payment = lazy(()=> import('../component/Payment'))
 const ReportData = lazy(()=> import('../component/Reports'))
 
 const Login = lazy(()=> import('../component/Login'))
@@ -17,30 +18,25 @@ const Register = lazy(()=> import('../component/Register'))
 export const serverBaseURL = 'http://localhost:8000/';
 axios.defaults.baseURL = serverBaseURL;
 
-export const AuthRoutes = [
+export const PriveteRoutes = [
 	{
 		path:'/',
-		exact : true,
 		component:Home
 	},
 	{
 		path:'/jobseeker',
-		exact : true,
 		component:ReportDashboardApp
 	},
 	{
 		path : '/pagination',
-		exact : true,
 		component : Pagination
 	},
 	{
 		path:'/registeruser',
-		exact : true,
 		component:RegisterUser
 	},
 	{
 		path:'/reports',
-		exact : true,
 		component:ReportData
 	},
 	{
@@ -50,17 +46,19 @@ export const AuthRoutes = [
 	},
 	{
 		path:'/mail/campaigns',
-		exact : true,
 		component:ViewCampaign
 	},
 	{
 		path:'/settings',
-		exact:true,
 		component:SettingApp
+	},
+	,
+	{
+		path:'/payment',
+		component:Payment
 	},
 	{
 		path:'/notiphyimport',
-		exact:true,
 		component:ImportCustomerData
 	},
 	// {
@@ -80,13 +78,13 @@ export const AuthRoutes = [
 	// },
 ]
 
-export const UnAuthRoutes = [
+export const PublicRoutes = [
 	{
 		path:'/login',
 		component: Login
 	}, 
 	{
 		path:'/register',
-		component: Register
+		component: RegisterUser
 	}
 ]

@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import { TextField, Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
@@ -74,6 +75,7 @@ function Login(props) {
                             /> <br/>
                             <span className=" text-red-600 "><ErrorMessage className="error_msg" name='password' /></span><br/>
                             <Button variant="contained" className={"mt-2 ml-5"} color="primary" type="submit">Login</Button>
+                            <Button variant="contained" className={"mt-2 ml-5"} color="primary"><Link className="text-white " to="register"> Register</Link></Button>
                         </Form>
                     </div>
                     </React.Fragment>

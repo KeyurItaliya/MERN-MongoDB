@@ -36,23 +36,52 @@ const useStyles = makeStyles((theme) => ({
     Mobile : ''
   }
 function JobSeekers(props){
-    const {isUserRegister, employee} = props;
+    const {isUserUpdated, employee} = props;
     const classes = useStyles();
     const dispatch = useDispatch();
-    
+    const [infineHeight, setInfineHeight] = useState('200px');
     const [formData, setFormData] = useState(initialFormValue);
     const [openDeleteConfirmDialog, setOpenDeleteConfirmDialog] = React.useState(false);
     const [deleteUserID, setDeleteUserID] = useState('')
 
     useEffect(() => {
+      dispatch(Action.getUser())
+    }, [])
+    console.log("isUserUpdated -->", isUserUpdated)
+    useEffect(() => {
+      if(isUserUpdated){
         dispatch(Action.getUser())
-      }, [])
-    
-      useEffect(() => {
-        if(isUserRegister){
-          dispatch(Action.getUser())
+        dispatch(Action.isUserUpdated(false))
+      }
+    }, [isUserUpdated])
+
+    useEffect(() => {
+      if(openDeleteConfirmDialog) {
+        const con = window.confirm("Are you soure delete this user?")
+        if(con){
+          dispatch(Action.userDelete(deleteUserID))
+          setOpenDeleteConfirmDialog(false)
+        }else{
+          setOpenDeleteConfirmDialog(false)
         }
-      }, [isUserRegister])
+      }else {
+        setOpenDeleteConfirmDialog(false)
+      }
+    }, [openDeleteConfirmDialog])
+
+    async function asyncsFunction() {
+      setTimeout(() => {
+        console.log("set time")
+      }, 3000)
+      const fa = async () => {
+        setTimeout(() => {
+          return "fa functions"
+        }, 4000)
+      }
+      const a = await fa();
+      console.log("a --->",a);
+    }
+    asyncsFunction();
 
     return(
         <TableContainer className="shadow mb-2" component={Paper}>
@@ -65,7 +94,7 @@ function JobSeekers(props){
                 <TableCell align="right">Action</TableCell>
                 </TableRow>
             </TableHead>
-            <TableBody>
+            <TableBody style={{ minWidth: 'max-content', maxWidth: '100%', height: infineHeight, overflow: 'auto' }}>
                 {(employee.length > 0) && employee.map((resData, key) => (
                     <TableRow  key={key}>
                     <TableCell align="right">{resData.username}</TableCell>
@@ -97,7 +126,7 @@ function JobSeekers(props){
 
 const mapStateToProps = ({user}) => ({
     employee: user.employee,
-    isUserRegister: user.isUserRegister
+    isUserUpdated: user.isUserUpdated
   })
 export default connect(mapStateToProps)(JobSeekers);
 

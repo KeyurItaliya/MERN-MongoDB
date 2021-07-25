@@ -7,16 +7,18 @@ import WorkIcon from '@material-ui/icons/Work';
 import ScheduleIcon from '@material-ui/icons/Schedule';
 import SelectAllIcon from '@material-ui/icons/SelectAll';
 
-const useStyle = makeStyles((theme) => ({
+const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
     },
     paper: {
-      padding: theme.spacing(2),
-      height: "10em"
+      padding: theme.spacing(1),
+      marginTop: "20px",
+      padding: "10px"
     },
     comSymbole: {
-      marginTop: "20px"
+      display: "flex",
+      justifyContent: "center"
     },
     table: {
       minWidth: 650,
@@ -30,48 +32,48 @@ const useStyle = makeStyles((theme) => ({
     }
   }));
 
-function cards({ classess }) {
-    const classes = useStyle
+function Card(props) {
+    const classes = useStyles();
     return (
         <React.Fragment>
-            <Grid container spacing={5}>
+            <Grid container spacing={2} className={classes.root}>
                 <Grid item xs={12} sm={6} lg={4}>
                   <Paper className={classes.paper}>
                       <Grid container spacing={3}>
-                      <Grid item sm={6} title={"Total Job seekers"}>
-                          <h3 className="truncate">Job seekers </h3>
-                      </Grid> 
-                      <Grid item sm={6} className={classes.comSymbole}>
-                          <WorkIcon />
+                        <Grid item sm={8} title={"Total Job seekers"}>
+                            <h3 className="truncate">Job seekers </h3>
+                        </Grid> 
+                        <Grid item sm={4} className={classes.comSymbole}>
+                            <WorkIcon />
+                        </Grid>
                       </Grid>
-                      </Grid>
-                      <h1>1515 USD</h1>
+                      <h3>2</h3>
                   </Paper>
                 </Grid>
                 <Grid item xs={12} sm={6} lg={4}>
                   <Paper className={classes.paper}>
                       <Grid container spacing={3}>
-                      <Grid item sm={6} title={"Total Interview Scheduled"}>
+                      <Grid item sm={8} title={"Total Interview Scheduled"}>
                           <h3 className="truncate">Interviews Scheduled </h3>
                       </Grid> 
-                      <Grid item sm={6} className={classes.comSymbole}>
+                      <Grid item sm={4} className={classes.comSymbole}>
                           <ScheduleIcon />
                       </Grid>
                       </Grid>
-                      <h1>1515 USD</h1>
+                      <h3>1</h3>
                   </Paper>
                 </Grid>
                 <Grid item xs={12} sm={6} lg={4}>
                   <Paper className={classes.paper}>
                       <Grid container spacing={3}>
-                      <Grid item sm={6}>
+                      <Grid item sm={8}>
                           <h3 className="truncate"> Selected </h3>
                       </Grid> 
-                      <Grid item sm={6} className={classes.comSymbole}>
+                      <Grid item sm={4} className={classes.comSymbole}>
                           <SelectAllIcon />
                       </Grid>
                       </Grid>
-                      <h1>1515 USD</h1>
+                      <h3>1</h3>
                   </Paper>
                 </Grid>
             </Grid>
@@ -79,4 +81,4 @@ function cards({ classess }) {
     )
 }
 
-export default cards
+export default Card

@@ -66,8 +66,8 @@ const useStyles = makeStyles((theme) => ({
         zIndex: theme.zIndex.drawer + 1,
         backgroundColor: '#212121',
         [theme.breakpoints.down('sm')]: {
-          backgroundColor: '#ffff00',
-          color: 'black',
+          backgroundColor: 'blue',
+          color: 'white',
         },
     },
     menuButton: {
@@ -152,6 +152,12 @@ export const SidebarData = [
     icon: <ReportIcon />,
     cName: 'nav-text'
   },
+  {
+    title: 'Payment',
+    path: '/payment',
+    icon: <ReportIcon />,
+    cName: 'nav-text'
+  }
 ];
 
 

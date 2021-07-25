@@ -42,15 +42,15 @@ function Register(props) {
     Mobile : Yup.number().required("*mobile is required"),
   })
 
-  useEffect(() => {
-    dispatch(Action.getUser())
-  }, [])
+  // useEffect(() => {
+  //   dispatch(Action.getUser())
+  // }, [])
 
-  useEffect(() => {
-    if(isUserRegister){
-      dispatch(Action.getUser())
-    }
-  }, [isUserRegister])
+  // useEffect(() => {
+  //   if(isUserRegister){
+  //     dispatch(Action.getUser())
+  //   }
+  // }, [isUserRegister])
 
   // const handleFromInpit = (e) => {
   //   const target = e.target;
