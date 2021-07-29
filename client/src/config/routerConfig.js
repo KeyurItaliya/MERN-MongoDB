@@ -12,6 +12,7 @@ const SettingApp = lazy(()=> import('../component/NiravCode'))
 const ImportCustomerData = lazy(()=> import('../component/Register'))
 const Payment = lazy(()=> import('../component/Payment'))
 const ReportData = lazy(()=> import('../component/Reports'))
+const PayFastPayment = lazy(() => import('../component/PayFastPayment'))
 
 const Login = lazy(()=> import('../component/Login'))
 const Register = lazy(()=> import('../component/Register'))
@@ -60,6 +61,10 @@ export const PriveteRoutes = [
 	{
 		path:'/notiphyimport',
 		component:ImportCustomerData
+	},
+	{
+		path:'/payFastPayment',
+		component:PayFastPayment
 	},
 	// {
 	// 	path:'/login',

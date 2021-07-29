@@ -157,6 +157,12 @@ export const SidebarData = [
     path: '/payment',
     icon: <ReportIcon />,
     cName: 'nav-text'
+  },
+  {
+    title: 'PayFast',
+    path: '/payFastPayment',
+    icon: <ReportIcon />,
+    cName: 'nav-text'
   }
 ];
 
