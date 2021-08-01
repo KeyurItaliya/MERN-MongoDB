@@ -38,7 +38,7 @@ export const userRegister = (datas) => (dispatch) => {
         }
         axios({
             method: 'post',
-            url: '/api/user/register',
+            url: '/user/register',
             headers: config, 
             data: datas
           }).then((res) => {

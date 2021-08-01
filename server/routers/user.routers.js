@@ -79,6 +79,11 @@ router.delete("/deleteUser/:id", (req, res) => {
     });
 });
 
+router.post('/notify', (req, res) => {
+  console.log(req);
+  res.status(200).json({ message: "suuceess" })
+})
+
 //orders
 
 router.post("/orders", orderController);
