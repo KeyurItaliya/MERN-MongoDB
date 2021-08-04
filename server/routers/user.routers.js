@@ -10,6 +10,7 @@ var algo = "aes256";
 
 const jwt = require("jsonwebtoken");
 const jwtkey = "jwt";
+const Queue = require('bull');
 
 const verification = require("../middleware/auth.middleware");
 
@@ -78,6 +79,45 @@ router.delete("/deleteUser/:id", (req, res) => {
       console.log(err);
     });
 });
+
+
+const test = async () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {  
+    for(var i = 0 ; i< 50000; i++){
+      console.log("hello", i)
+    }
+    }, [1000])
+    resolve({ suucees : "hello" })
+  })
+  
+}
+
+const test1 = () => {
+    for(var i = 0 ; i< 500; i++){
+      console.log("hello", i)
+      return { suucees : "hello" }
+    }
+}
+
+let REDIS_URL = 'redis://127.0.0.1:6379';
+
+let workQueue = new Queue('work', REDIS_URL);
+
+router.post("/backgraounproccess",async (req, res) => {
+  let job = await test()
+  res.json({ id: job });
+//   try{
+//   const myFirstQueue = new Queue('my-first-queue');
+//   let a = myFirstQueue.process(async (job) => {
+//     job.done()
+//   });
+//   res.status(200).send({ data: a })
+// }catch(error){
+//   res.send(error)
+// }
+
+})
 
 router.post('/notify', (req, res) => {
   console.log(req);

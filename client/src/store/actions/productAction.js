@@ -16,7 +16,7 @@ export const getUser = () => (dispatch) => {
         // const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
         const request = axios({
           method: 'get',
-          url: '/api/user/users',
+          url: '/user/users',
           // headers: {
           //   authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiX2lkIjoiNjA2NmQ5MWJhNGEyNjcxYWVjMWFiYWVlIiwidXNlcm5hbWUiOiJhZG1pbiIsInBhc3N3b3JkIjoiNmQzOGU2M2IyM2MyNjFiZTc5NTBhMGVkZWIzYzc3NGUiLCJhZGRyZXNzIjoicmVxLmJvZHkuYWRkcmVzcyIsIk1vYmlsZSI6MTIzNCwiX192IjowfSwiaWF0IjoxNjE3MzUyOTg4LCJleHAiOjE2MTc5NTc3ODh9.ATfhjyF9Lf-aGTF7bMoFoHcBXseYrLpKc3KUIOuoOs8'
           // }
